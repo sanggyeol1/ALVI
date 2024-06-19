@@ -8,13 +8,15 @@ const Layout = () => {
     return (
         <>
             <Navbar bg="dark" variant="dark" expand="lg">
-            <Container>
-                <Navbar.Brand as={Link} to="/">
-                    <img width={100} src="ALV.png" alt="Algorithm Visualizer Logo"/>
-                    <p className="brand-text">Algorithm Visualizer</p>
-                </Navbar.Brand>
-            </Container>
-        </Navbar>
+                <Container >
+                    <Navbar.Brand as={Link} to="/">
+                        <div className='disp-f'>
+                        <img width={80} src="ALV.png" alt="Algorithm Visualizer Logo" />
+                        <div className="brand-text">Algorithm View</div>
+                        </div>
+                    </Navbar.Brand>
+                </Container>
+            </Navbar>
 
             <Container className="mt-4">
                 <Outlet />
@@ -22,7 +24,7 @@ const Layout = () => {
 
             <footer className="bg-dark text-white text-center py-3 mt-4">
                 <Container>
-                    <p>&copy; 2024 Algorithm Visualizer. All rights reserved.</p>
+                    <p>&copy; 2024 Han Sang Gyeol. All rights reserved.</p>
                     <div className='footer-icon-box'>
                         <a href="https://www.instagram.com" className="text-white mx-3" >
                             <FaInstagram />

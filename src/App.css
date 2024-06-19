@@ -1,48 +1,6 @@
 .App {
   text-align: center;
-  padding: 20px;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
 
-nav li {
-  margin: 10px 0;
-}
 
-nav a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-button {
-  margin: 10px;
-  padding: 10px;
-  font-size: 16px;
-}
-
-pre {
-  background: #f4f4f4;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: left;
-}
-
-.map-container {
-  margin-bottom: 20px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.map-container:hover {
-  transform: translateY(-5px);
-}
