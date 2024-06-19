@@ -1,0 +1,35 @@
+.array-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 200px;
+    margin-top: 20px;
+  }
+  
+  .array-bar {
+    width: 20px;
+    margin: 0 5px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    font-weight: bold;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  
+.title{
+  padding: 20px;
+}

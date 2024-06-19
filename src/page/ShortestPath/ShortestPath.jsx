@@ -1,8 +1,11 @@
 import React from 'react'
+import PathfindingVisualizer from '../../components/PathfindingVisualizer/PathfindingVisualizer'
 
 const ShortestPath = () => {
   return (
-    <div>ShortestPath</div>
+    <div>
+      <PathfindingVisualizer></PathfindingVisualizer>
+    </div>
   )
 }
 

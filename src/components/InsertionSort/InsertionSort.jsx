@@ -1,25 +1,31 @@
 import React, { useState } from 'react';
-import './BubbleSort.css';
+import './InsertionSort.css';
 
-const BubbleSort = () => {
+const InsertionSort = () => {
   const [array, setArray] = useState([5, 3, 8, 6, 2, 7, 4, 1]);
-  const [isSorting, setIsSorting] = useState(false);
   const [current, setCurrent] = useState(null);
   const [next, setNext] = useState(null);
+  const [isSorting, setIsSorting] = useState(false);
 
-  const bubbleSort = async (arr) => {
+  const insertionSort = async (arr) => {
     setIsSorting(true);
-    let len = arr.length;
-    for (let i = 0; i < len - 1; i++) {
-      for (let j = 0; j < len - i - 1; j++) {
-        setCurrent(j);
-        setNext(j + 1);
-        if (arr[j] > arr[j + 1]) {
-          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-          setArray([...arr]);
-        }
+    for (let i = 1; i < arr.length; i++) {
+      let key = arr[i];
+      let j = i - 1;
+
+      while (j >= 0 && arr[j] > key) {
+        arr[j + 1] = arr[j];
+        j = j - 1;
+
+        setCurrent(j + 1);
+        setNext(j);
+
+        // 잠시 멈추어 시각화 효과를 줍니다.
         await new Promise((resolve) => setTimeout(resolve, 300));
+        setArray([...arr]);
       }
+      arr[j + 1] = key;
+      setArray([...arr]);
     }
     setCurrent(null);
     setNext(null);
@@ -27,15 +33,13 @@ const BubbleSort = () => {
   };
 
   const handleStart = () => {
-    bubbleSort([...array]);
+    insertionSort([...array]);
   };
 
   return (
     <div>
-      <h2 className='title'>버블 정렬 시각화</h2>
-      <button 
-        class="btn btn-primary"
-        onClick={handleStart} disabled={isSorting}>
+      <h2 className='title'>삽입 정렬 시각화</h2>
+      <button class="btn btn-primary" onClick={handleStart} disabled={isSorting}>
         {isSorting ? '정렬 중...' : '정렬 시작'}
       </button>
       <div className="array-container">
@@ -55,4 +59,4 @@ const BubbleSort = () => {
   );
 };
 
-export default BubbleSort;
+export default InsertionSort;

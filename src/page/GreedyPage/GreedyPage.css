@@ -1,0 +1,36 @@
+.greedy-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .activities, .selected-activities {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .activity {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .selected {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

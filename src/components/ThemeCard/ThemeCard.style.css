@@ -4,6 +4,6 @@
 
 .theme-box{
     box-shadow: 1px 1px 3px rgba(68, 68, 68, 0.647);
-    padding: 30px;
+    padding: 50px 30px 50px 30px;
     cursor:pointer;
 }
