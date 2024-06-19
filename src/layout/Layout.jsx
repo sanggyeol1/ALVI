@@ -11,7 +11,7 @@ const Layout = () => {
                 <Container >
                     <Navbar.Brand as={Link} to="/">
                         <div className='disp-f'>
-                        <img width={80} src="ALV.png" alt="Algorithm Visualizer Logo" />
+                        <img width={80} src="ALV.png" alt="ALV.png" />
                         <div className="brand-text">Algorithm View</div>
                         </div>
                     </Navbar.Brand>

@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .App {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .binary-search {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .input-container {
+    margin: 10px 0;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-field {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .search-button,
+  .control-button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-button:hover,
+  .control-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .array-visualization {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .array-element {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .highlight-left {
+    background-color: lightgreen;
+  }
+  
+  .highlight-mid {
+    background-color: yellow;
+  }
+  
+  .highlight-right {
+    background-color: lightcoral;
+  }
+  
+  .faded {
+    background-color: lightgray;
+  }
+  
+  .controls {
+    margin: 20px 0;
+  }
+  
+  .search-count {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

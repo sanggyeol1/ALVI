@@ -9,7 +9,6 @@ import BubbleSort from './components/BubbleSort/BubbleSort';
 import WalkPage from './page/Walk/WalkPage';
 import SearchPage from './page/SearchPage/SearchPage';
 import GreedyPage from './page/GreedyPage/GreedyPage';
-import DynamicPage from './page/Dynamic/DynamicPage';
 import ShortestPath from './page/ShortestPath/ShortestPath';
 import InsertionSort from './components/InsertionSort/InsertionSort';
 import SelectionSort from './components/SelectionSort/SelectionSort';
@@ -36,8 +35,6 @@ function App() {
             <Route path="search" element={<SearchPage />}>
             </Route>
             <Route path="shortest-path" element={<ShortestPath />}>
-            </Route>
-            <Route path="dynamic" element={<DynamicPage/>}>
             </Route>
             <Route path="greedy" element={<GreedyPage />}>
             </Route>

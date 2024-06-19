@@ -1,8 +1,11 @@
 import React from 'react'
+import BinarySearch from '../../components/BinarySearch/BinarySearch'
 
 const SearchPage = () => {
   return (
-    <div>SearchPage</div>
+    <div>
+      <BinarySearch/>
+    </div>
   )
 }
 

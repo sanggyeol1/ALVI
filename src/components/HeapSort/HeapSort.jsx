@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './HeapSort.css';
 
 const HeapSort = () => {
-  const [array, setArray] = useState([5, 3, 8, 6, 2, 7, 4, 1]);
+  const [array, setArray] = useState([11, 5, 3, 12, 8, 6, 10, 2, 7, 4, 1, 9]);
   const [isSorting, setIsSorting] = useState(false);
 
   const heapSort = async (arr) => {

@@ -11,7 +11,7 @@ function BackTrackingPage() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-8 chessBoardArea" style={{ padding: "3vh" }}>
+        <div className="col-md-9 chessBoardArea" style={{ padding: "3vh" }}>
           <div className="row">
             <div className="col-md-12">
               <CheckerBoard size={count} queenPositions={queenPos} />
@@ -25,7 +25,7 @@ function BackTrackingPage() {
             </div>
           </div>
         </div>
-        <div className="col-md-4 chessBoardArea" style={{ padding: "3vh" }}>
+        <div className="col-md-3 chessBoardArea" style={{ padding: "3vh" }}>
           <div className="row">
             <div className="col-md-12">
               <h3>Board Size:</h3>
