@@ -1,0 +1,24 @@
+.ta-c{
+    text-align: center;
+}
+
+.footer-icon-box a{
+    font-size: 3rem;
+}
+
+.navbar{
+    background: hsl(28, 49, 62) !important;
+}
+
+
+
+
+
+.brand-text {
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+}
