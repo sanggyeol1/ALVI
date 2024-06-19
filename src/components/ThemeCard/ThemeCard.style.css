@@ -1,9 +1,53 @@
-.theme-icon{
+.theme-icon {
     font-size: 4rem;
-}
-
-.theme-box{
+    margin-top: 10px;
+  }
+  
+  .theme-box {
+    position: relative;
     box-shadow: 1px 1px 3px rgba(68, 68, 68, 0.647);
-    padding: 50px 30px 50px 30px;
-    cursor:pointer;
-}
+    padding: 50px 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure the description doesn't overflow the box */
+  }
+  
+  .theme-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .description {
+    position: absolute;
+    bottom: -100%; /* Start off-screen */
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transition: bottom 0.3s ease-in-out;
+  }
+  
+  .theme-box:hover .description {
+    bottom: 0; /* Slide up into view */
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .theme-box:active {
+    animation: pulse 0.5s;
+  }

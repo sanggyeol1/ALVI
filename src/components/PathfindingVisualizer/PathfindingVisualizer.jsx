@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import Node from './Node/Node';
-import { dijkstra, getNodesInShortestPathOrder } from '../../utilities/dijkstra';
+import { dijkstra, getNodesInShortestPathOrder as getNodesInShortestPathOrderDijkstra } from '../../utilities/dijkstra';
+import { aStar, getNodesInShortestPathOrder as getNodesInShortestPathOrderAStar } from '../../utilities/aStar';
+import { bfs, getNodesInShortestPathOrder as getNodesInShortestPathOrderBFS } from '../../utilities/bfs';
+import { dfs, getNodesInShortestPathOrder as getNodesInShortestPathOrderDFS } from '../../utilities/dfs';
 
 import './PathfindingVisualizer.css';
 
 const START_NODE_ROW = 10;
-const START_NODE_COL = 15;
+const START_NODE_COL = 10;
 const FINISH_NODE_ROW = 10;
-const FINISH_NODE_COL = 35;
+const FINISH_NODE_COL = 40;
 
 export default class PathfindingVisualizer extends Component {
   constructor() {
@@ -38,7 +41,7 @@ export default class PathfindingVisualizer extends Component {
     this.setState({ mouseIsPressed: false });
   }
 
-  animateDijkstra = (visitedNodesInOrder, nodesInShortestPathOrder) => {
+  animateAlgorithm = (visitedNodesInOrder, nodesInShortestPathOrder) => {
     for (let i = 0; i <= visitedNodesInOrder.length; i++) {
       if (i === visitedNodesInOrder.length) {
         setTimeout(() => {
@@ -67,8 +70,35 @@ export default class PathfindingVisualizer extends Component {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
     const visitedNodesInOrder = dijkstra(grid, startNode, finishNode);
-    const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
-    this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
+    const nodesInShortestPathOrder = getNodesInShortestPathOrderDijkstra(finishNode);
+    this.animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder);
+  }
+
+  visualizeAstar = () => {
+    const { grid } = this.state;
+    const startNode = grid[START_NODE_ROW][START_NODE_COL];
+    const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
+    const visitedNodesInOrder = aStar(grid, startNode, finishNode);
+    const nodesInShortestPathOrder = getNodesInShortestPathOrderAStar(finishNode);
+    this.animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder);
+  }
+
+  visualizeBFS = () => {
+    const { grid } = this.state;
+    const startNode = grid[START_NODE_ROW][START_NODE_COL];
+    const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
+    const visitedNodesInOrder = bfs(grid, startNode, finishNode);
+    const nodesInShortestPathOrder = getNodesInShortestPathOrderBFS(finishNode);
+    this.animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder);
+  }
+
+  visualizeDFS = () => {
+    const { grid } = this.state;
+    const startNode = grid[START_NODE_ROW][START_NODE_COL];
+    const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
+    const visitedNodesInOrder = dfs(grid, startNode, finishNode);
+    const nodesInShortestPathOrder = getNodesInShortestPathOrderDFS(finishNode);
+    this.animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
   render() {
@@ -76,11 +106,28 @@ export default class PathfindingVisualizer extends Component {
 
     return (
       <>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
         <button 
-          class="btn btn-dark start-btn"
+          className="btn btn-dark start-btn"
           onClick={this.visualizeDijkstra}>
-          다익스트라 알고리즘 : 최단경로 찾기 시작
+          다익스트라 알고리즘
         </button>
+        <button 
+          className="btn btn-dark start-btn"
+          onClick={this.visualizeAstar}>
+          A* 알고리즘
+        </button>
+        <button 
+          className="btn btn-dark start-btn"
+          onClick={this.visualizeBFS}>
+          너비우선탐색
+        </button>
+        <button 
+          className="btn btn-dark start-btn"
+          onClick={this.visualizeDFS}>
+          깊이우선탐색
+        </button>
+        </div>
         <div className="grid">
           {grid.map((row, rowIdx) => (
             <div key={rowIdx}>
@@ -133,6 +180,9 @@ const createNode = (col, row) => {
     isVisited: false,
     isWall: false,
     previousNode: null,
+    g: 0, // Cost from start node to this node
+    h: 0, // Heuristic cost to finish node
+    f: 0, // Total cost (g + h)
   };
 };
 
